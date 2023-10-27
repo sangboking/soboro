@@ -8,8 +8,12 @@ export const myFont = localFont({
       style: "normal",
     },
     {
-      path: "./AppleSDGothicNeoB.ttf",
+      path: "./AppleSDGothicNeoM.ttf",
       weight: "500",
+    },
+    {
+      path: "./AppleSDGothicNeoB.ttf",
+      weight: "600",
       style: "bold",
     },
   ],

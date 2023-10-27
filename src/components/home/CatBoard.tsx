@@ -127,7 +127,7 @@ const Title = styled.h3`
   color: #111;
   font-size: 22px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   line-height: normal;
   margin-top: 23px;
 `;

@@ -42,3 +42,93 @@ export const RECEIPT_ARR = [
       중대...`,
   },
 ];
+
+export const PRODUCT_ARR = [
+  {
+    id: 1,
+    url: "/images/Product1.jpeg",
+    name: `베터 반려동물 영양 파우
+    더 8종 (면역/눈/관절/...`,
+    price: "27,000",
+    star: "17,512",
+  },
+  {
+    id: 2,
+    url: "/images/Product2.jpeg",
+    name: `바이오강스 뉴트리리페어
+    민감피부용 샴푸 250ml`,
+    price: "27,000",
+    star: "63",
+  },
+  {
+    id: 3,
+    url: "/images/Product3.jpeg",
+    name: `우프앤먀오 강아지 피부
+    영양제 60g`,
+    price: "35,000",
+    star: "23",
+  },
+];
+
+export const ICON_ARR = [
+  {
+    id: 1,
+    url: "/svgs/Phone.svg",
+    width: 15.23,
+    height: 20,
+    content: "예약, 문의",
+  },
+  {
+    id: 2,
+    url: "/svgs/Location.svg",
+    width: 17,
+    height: 20,
+    content: "위치",
+  },
+  {
+    id: 3,
+    url: "/svgs/Share.svg",
+    width: 17,
+    height: 20,
+    content: "공유",
+  },
+  {
+    id: 4,
+    url: "/svgs/Scrap.svg",
+    width: 20,
+    height: 20,
+    content: "스크랩",
+  },
+];
+
+export const ANIMAL_ARR = [
+  {
+    id: 1,
+    date: "23.08.12",
+    info: "말티즈 . 4살 . 수컷(중성화)",
+    content: `미용 한지 6일 정도 뒤에 보니 노란 딱지와
+    피가 난 걸 발견해서 병원 방문했습니다...`,
+    badge: ["#곰팡이성피부염", "피부긁음", "피부딱지", "피부상처"],
+  },
+  {
+    id: 2,
+    date: "23.07.31",
+    info: "페키니즈 . 8살 . 수컷(중성화)",
+    content: `피부 온몸에 붉은기+갈색으로 전체가 다 뒤집어지고 각질이 많이 떨어짐, 알러지일 확률이 가장 높아서 원인을 알...`,
+    badge: [
+      "#곰팡이성피부염",
+      "#세균성피부염",
+      "#알러지",
+      "#붉어짐",
+      "#비듬",
+      "#피부긁음",
+    ],
+  },
+  {
+    id: 3,
+    date: "23.07.15",
+    info: "믹스견 . 6살 . 암컷(중성화)",
+    content: `산책 중 나무 아래 풀 밭에 들어갔다가 갑자기 뒷쪽 발을 핥고, 디디지 못하고 안아달라하며 계속 헥헥거리며 낑...`,
+    badge: ["#알러지", "#피부기타질환", "#붉어짐", "#피부핥음"],
+  },
+];

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 import styled from "styled-components";
@@ -10,13 +11,15 @@ interface Props {
 const Header = ({ content }: Props) => {
   return (
     <HeaderWrapper>
-      <Image
-        src="/svgs/BackArrow.svg"
-        width={20}
-        height={18.46}
-        alt="BackArrow"
-        style={{ cursor: "pointer" }}
-      />
+      <Link href="/">
+        <Image
+          src="/svgs/BackArrow.svg"
+          width={20}
+          height={18.46}
+          alt="BackArrow"
+          style={{ cursor: "pointer" }}
+        />
+      </Link>
 
       <Content>{content}</Content>
 
@@ -41,12 +44,16 @@ const HeaderWrapper = styled.header`
   align-items: center;
   border-bottom: 0.5px solid #dedede;
   background: #fff;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 20;
 `;
 
 const Content = styled.h2`
   color: #111;
   font-size: 19px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   line-height: normal;
 `;
