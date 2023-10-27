@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import Header from "@/components/layout/Header";
+import SoboroHeader from "@/components/layout/SoboroHeader";
 import CatBoard from "@/components/home/CatBoard";
 import RecentReview from "@/components/home/RecentReview";
 import Navbar from "@/components/layout/Navbar";
@@ -8,7 +8,7 @@ import Navbar from "@/components/layout/Navbar";
 export default function Home() {
   return (
     <HomeWrapper>
-      <Header />
+      <SoboroHeader />
 
       <CatBoard />
 

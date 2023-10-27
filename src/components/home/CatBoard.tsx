@@ -3,22 +3,14 @@ import Image from "next/image";
 
 import styled from "styled-components";
 
+import { DISEASE_ARR } from "@/constants";
+
 const CatBoard = () => {
   const [selectedDisease, setSelectedDisease] = useState("");
 
-  const DISEASE_ARR = [
-    "피부",
-    "눈",
-    "코/호흡기",
-    "구강/치아",
-    "귀",
-    "소화기",
-    "비뇨기",
-    "뼈/관절",
-    "뇌/신경",
-    "심장/혈관",
-    "생식기능",
-  ];
+  const onClickDisease = (disease: string) => {
+    setSelectedDisease(disease);
+  };
 
   return (
     <CatBoardWrapper>
@@ -50,18 +42,44 @@ const CatBoard = () => {
             }}
           />
 
-          <Image
-            src="/svgs/Glasses.svg"
-            width={45}
-            height={45}
-            alt="Glasses"
-            style={{ position: "absolute", top: "51px", right: "43px" }}
-          />
+          {selectedDisease === "눈" ? (
+            <>
+              <Image
+                src="/svgs/BigLens.svg"
+                width={115}
+                height={115}
+                alt="BigLens"
+                style={{ position: "absolute", top: "50px", right: "75px" }}
+              />
+              <Image
+                src="/svgs/Eye.svg"
+                width={77}
+                height={77}
+                alt="BigLens"
+                style={{ position: "absolute", top: "62.5px", right: "100px" }}
+              />
+            </>
+          ) : (
+            <Image
+              src="/svgs/Glasses.svg"
+              width={45}
+              height={45}
+              alt="Glasses"
+              style={{ position: "absolute", top: "51px", right: "43px" }}
+            />
+          )}
         </CatBox>
 
         <DiseaseBox>
           {DISEASE_ARR.map((data) => (
-            <Badge key={data}>{data}</Badge>
+            <Badge
+              value={data}
+              selectedDisease={selectedDisease}
+              key={data}
+              onClick={() => onClickDisease(data)}
+            >
+              {data}
+            </Badge>
           ))}
         </DiseaseBox>
       </TopCard>
@@ -73,6 +91,11 @@ const CatBoard = () => {
 };
 
 export default CatBoard;
+
+interface IBadge {
+  value: string;
+  selectedDisease: string;
+}
 
 const CatBoardWrapper = styled.div`
   width: 350px;
@@ -104,7 +127,7 @@ const Title = styled.h3`
   color: #111;
   font-size: 22px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: normal;
   margin-top: 23px;
 `;
@@ -130,18 +153,23 @@ const DiseaseBox = styled.div`
   margin-top: 20px;
 `;
 
-const Badge = styled.div`
+const Badge = styled.div<IBadge>`
   padding: 6px 13px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #555;
+  color: ${(props) =>
+    props.value === props.selectedDisease ? "#0091E2" : "#555"};
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  border: 1px solid #c8c8c8;
-  background: #fff;
+  border: ${(props) =>
+    props.value === props.selectedDisease
+      ? "1px solid #0091E2"
+      : "1px solid #c8c8c8"};
+  background: ${(props) =>
+    props.value === props.selectedDisease ? "#EFF9FF" : "#fff"};
   border-radius: 1000px;
   cursor: pointer;
 `;

@@ -1,42 +1,31 @@
-import React from "react";
 import Image from "next/image";
+import React from "react";
 
 import styled from "styled-components";
 
-const Header = () => {
+interface Props {
+  content: string;
+}
+
+const Header = ({ content }: Props) => {
   return (
     <HeaderWrapper>
-      <ToggleBox>
-        <Image
-          src="/svgs/ToggleLeft.svg"
-          width={32}
-          height={31}
-          alt="Toggle-Left"
-        />
-
-        <Image
-          src="/svgs/ToggleRight.svg"
-          width={14.25}
-          height={19}
-          alt="Toggle-Right"
-          style={{ marginLeft: "9px" }}
-        />
-      </ToggleBox>
-
       <Image
-        src="/svgs/Logo.svg"
-        width={70}
-        height={29}
-        alt="Logo"
-        style={{ marginLeft: "78px", marginTop: "18px" }}
+        src="/svgs/BackArrow.svg"
+        width={20}
+        height={18.46}
+        alt="BackArrow"
+        style={{ cursor: "pointer" }}
       />
 
+      <Content>{content}</Content>
+
       <Image
-        src="/svgs/Lens.svg"
-        width={23}
-        height={23}
-        alt="Lens"
-        style={{ marginLeft: "110px", marginTop: "24px" }}
+        src="/svgs/BlackLens.svg"
+        width={20}
+        height={19.98}
+        alt="BlackLens"
+        style={{ cursor: "pointer" }}
       />
     </HeaderWrapper>
   );
@@ -45,25 +34,19 @@ const Header = () => {
 export default Header;
 
 const HeaderWrapper = styled.header`
-  width: 100%;
-  height: 58px;
-  background-color: #43bbff;
   display: flex;
-  padding-left: 20px;
-  padding-right: 28px;
-  position: sticky;
-  top: 0;
-  left: 0;
-  z-index: 20;
+  width: 100%;
+  padding: 15px 20px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid #dedede;
+  background: #fff;
 `;
 
-const ToggleBox = styled.div`
-  width: 64px;
-  height: 31px;
-  position: relative;
-  border-radius: 15.5px;
-  background: #bde7ff;
-  display: flex;
-  align-items: center;
-  margin-top: 17px;
+const Content = styled.h2`
+  color: #111;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 `;

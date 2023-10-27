@@ -1,8 +1,16 @@
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 
-export const InterFont = Inter({
-  weight: ["300", "400", "500", "600", "700"],
-  style: "normal",
-  subsets: ["latin"],
-  display: "swap",
+export const myFont = localFont({
+  src: [
+    {
+      path: "./AppleSDGothicNeoR.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./AppleSDGothicNeoB.ttf",
+      weight: "500",
+      style: "bold",
+    },
+  ],
 });

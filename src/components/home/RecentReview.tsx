@@ -1,87 +1,57 @@
-import Image from "next/image";
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 import styled from "styled-components";
+import { RECEIPT_ARR, REVIEW_ARR } from "@/constants";
 
 const RecentReview = () => {
-  const DISEASE_ARR = ["영상임상진단", "거친호흡", "중성화", "눈곱", "피부"];
-
   return (
     <RecentReviewWrapper>
       <Title>최근 등록된 리뷰</Title>
 
       <BadgeBox>
-        {DISEASE_ARR.map((data) => (
+        {REVIEW_ARR.map((data) => (
           <Badge key={data}>{data}</Badge>
         ))}
       </BadgeBox>
 
       <ReviewBox>
-        <ReviewCard>
-          <CheckBadgeBox>
-            <CheckBadge>
-              <Image src="/svgs/Check.svg" width={12} height={12} alt="Check" />
-              영수증 인증
-            </CheckBadge>
-          </CheckBadgeBox>
+        {RECEIPT_ARR.map((data) => (
+          <ReviewCard key={data.id}>
+            <CheckBadgeBox>
+              <CheckBadge>
+                <Image
+                  src="/svgs/Check.svg"
+                  width={12}
+                  height={12}
+                  alt="Check"
+                />
+                영수증 인증
+              </CheckBadge>
+            </CheckBadgeBox>
 
-          <PetInfo>코리안 쇼트헤어 . 2살 . 암컷(중성화)</PetInfo>
-          <Date>23.08.12</Date>
-          <Content>
-            구토가 지속되어서 종합검진 겸 초음파랑 혈검 종합해서 했습니다~
-            아무래도 2차병 원이어서 좀 정신 없긴 했지만, 상담도 친 절하고
-            자세하게 해주셨어요 ㅎㅎ 결과적 으로 아무 문제가 없고 무척
-            건강해서,, 구 토 이유는 못찾았네요. 식이적으로 잘케어 해봐야겠습니다
-            ㅜㅜ 만성 구토 때문에 ...
-          </Content>
+            <PetInfo>{data.petInfo}</PetInfo>
+            <Date>{data.date}</Date>
+            <Content>{data.content}</Content>
 
-          <LinkBox>
-            <LeftBox>
-              <HospitalName>24시 샤인동물메디컬센터</HospitalName>
-              <Location>서울시 송파구</Location>
-            </LeftBox>
+            <Link href="/review">
+              <LinkBox>
+                <LeftBox>
+                  <HospitalName>24시 샤인동물메디컬센터</HospitalName>
+                  <Location>서울시 송파구</Location>
+                </LeftBox>
 
-            <Image
-              src="/svgs/RightArrow.svg"
-              width={9}
-              height={7}
-              alt="RightArrow "
-            />
-          </LinkBox>
-        </ReviewCard>
-
-        <ReviewCard>
-          <CheckBadgeBox>
-            <CheckBadge>
-              <Image src="/svgs/Check.svg" width={12} height={12} alt="Check" />
-              영수증 인증
-            </CheckBadge>
-          </CheckBadgeBox>
-
-          <PetInfo>웰시 코기 펨브로크 . 5살 . 수컷(중성화)</PetInfo>
-          <Date>23.08.13</Date>
-          <Content>
-            기존에 고관절 이형성증이 있어 6개월마 다 방사선 촬영을 통해 체크하고
-            있습니다.두루 동물병원선생님이원주 내에샤 정형 외과 수술을 많이
-            하시는 것 같아 방문해봤 습니다.네다리모두 촬영하였고 상태에 대해
-            심각하지만자세하게설명해주셨습 니다. 기존에 다니던 동물병원들은
-            중대...
-          </Content>
-
-          <LinkBox>
-            <LeftBox>
-              <HospitalName>24시 샤인동물메디컬센터</HospitalName>
-              <Location>서울시 송파구</Location>
-            </LeftBox>
-
-            <Image
-              src="/svgs/RightArrow.svg"
-              width={9}
-              height={7}
-              alt="RightArrow "
-            />
-          </LinkBox>
-        </ReviewCard>
+                <Image
+                  src="/svgs/RightArrow.svg"
+                  width={9}
+                  height={7}
+                  alt="RightArrow "
+                />
+              </LinkBox>
+            </Link>
+          </ReviewCard>
+        ))}
       </ReviewBox>
     </RecentReviewWrapper>
   );
@@ -100,7 +70,7 @@ const Title = styled.h2`
   color: #111;
   font-size: 24px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: normal;
 `;
 
@@ -225,7 +195,7 @@ const HospitalName = styled.h4`
   color: #111;
   font-size: 12px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 500;
   line-height: normal;
 `;
 
