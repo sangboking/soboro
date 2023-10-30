@@ -18,24 +18,24 @@ const RecentReview = () => {
 
       <ReviewBox>
         {RECEIPT_ARR.map((data) => (
-          <ReviewCard key={data.id}>
-            <CheckBadgeBox>
-              <CheckBadge>
-                <Image
-                  src="/svgs/Check.svg"
-                  width={12}
-                  height={12}
-                  alt="Check"
-                />
-                영수증 인증
-              </CheckBadge>
-            </CheckBadgeBox>
+          <Link href="/review" key={data.id}>
+            <ReviewCard>
+              <CheckBadgeBox>
+                <CheckBadge>
+                  <Image
+                    src="/svgs/Check.svg"
+                    width={12}
+                    height={12}
+                    alt="Check"
+                  />
+                  영수증 인증
+                </CheckBadge>
+              </CheckBadgeBox>
 
-            <PetInfo>{data.petInfo}</PetInfo>
-            <Date>{data.date}</Date>
-            <Content>{data.content}</Content>
+              <PetInfo>{data.petInfo}</PetInfo>
+              <Date>{data.date}</Date>
+              <Content>{data.content}</Content>
 
-            <Link href="/review">
               <LinkBox>
                 <LeftBox>
                   <HospitalName>24시 샤인동물메디컬센터</HospitalName>
@@ -49,8 +49,8 @@ const RecentReview = () => {
                   alt="RightArrow "
                 />
               </LinkBox>
-            </Link>
-          </ReviewCard>
+            </ReviewCard>
+          </Link>
         ))}
       </ReviewBox>
     </RecentReviewWrapper>
@@ -119,6 +119,7 @@ const ReviewCard = styled.div`
   background: #fff;
   box-shadow: 4px 4px 0px 0px #dbdbdb;
   padding: 20px;
+  cursor: pointer;
 `;
 
 const CheckBadgeBox = styled.div`

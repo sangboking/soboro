@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 import styled from "styled-components";
@@ -6,7 +7,10 @@ const ReservationFooter = () => {
   return (
     <ReservationFooterWrapper>
       <ReviewButton>리뷰 작성</ReviewButton>
-      <ReservationButton>예약하기</ReservationButton>
+
+      <Link href="/reservation">
+        <ReservationButton>예약하기</ReservationButton>
+      </Link>
     </ReservationFooterWrapper>
   );
 };
