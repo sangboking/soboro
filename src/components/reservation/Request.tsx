@@ -1,7 +1,9 @@
-import { NOTICE_ARR } from "@/constants";
 import React from "react";
+import Link from "next/link";
 
 import styled from "styled-components";
+
+import { NOTICE_ARR } from "@/constants";
 
 const Request = () => {
   return (
@@ -37,7 +39,9 @@ const Request = () => {
         동의합니다.
       </AgreeCaution>
 
-      <ReservationButton>예약하기</ReservationButton>
+      <Link href="/reservation-complete">
+        <ReservationButton>예약하기</ReservationButton>
+      </Link>
     </RequestWrapper>
   );
 };
