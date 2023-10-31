@@ -247,6 +247,7 @@ const ServiceCard = styled.div`
   padding: 10px 20px;
   align-items: center;
   gap: 10px;
+  cursor: pointer;
 
   border-radius: 10px;
   border: 0.5px solid #c8c8c8;
@@ -255,6 +256,7 @@ const ServiceCard = styled.div`
     3px 2px 4px 0px rgba(0, 0, 0, 0.09), 7px 5px 5px 0px rgba(0, 0, 0, 0.05),
     12px 10px 6px 0px rgba(0, 0, 0, 0.01), 19px 15px 7px 0px rgba(0, 0, 0, 0);
 `;
+
 const ServiceContent = styled.h4`
   color: #111;
   font-size: 14px;

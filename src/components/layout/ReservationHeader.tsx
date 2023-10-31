@@ -31,7 +31,7 @@ export default ReservationHeader;
 const HeaderWrapper = styled.header`
   width: 100%;
   display: flex;
-  padding: 15px 165px 15px 20px;
+  padding: 15px 0px 15px 20px;
   align-items: center;
   gap: 122px;
   border-bottom: 0.5px solid #dedede;
