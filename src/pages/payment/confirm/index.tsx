@@ -3,21 +3,18 @@ import React from "react";
 import styled from "styled-components";
 
 import ReservationHeader from "@/components/layout/ReservationHeader";
-import Account from "@/components/payment/Account";
 
 const index = () => {
   return (
-    <PaymentAccountWrapper>
-      <ReservationHeader content="지급 계좌" />
-
-      <Account />
-    </PaymentAccountWrapper>
+    <ConfirmWrapper>
+      <ReservationHeader content="청구 내용 확인" />
+    </ConfirmWrapper>
   );
 };
 
 export default index;
 
-const PaymentAccountWrapper = styled.div`
+const ConfirmWrapper = styled.div`
   width: 393px;
   height: 100%;
   background-color: #fff;

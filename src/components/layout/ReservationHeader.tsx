@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 import styled from "styled-components";
@@ -9,17 +10,18 @@ interface Props {
 }
 
 const ReservationHeader = ({ content }: Props) => {
+  const router = useRouter();
+
   return (
     <HeaderWrapper>
-      <Link href="/">
-        <Image
-          src="/svgs/BackArrow.svg"
-          width={20}
-          height={18.46}
-          alt="BackArrow"
-          style={{ cursor: "pointer" }}
-        />
-      </Link>
+      <Image
+        src="/svgs/BackArrow.svg"
+        width={20}
+        height={18.46}
+        alt="BackArrow"
+        style={{ cursor: "pointer" }}
+        onClick={() => router.back()}
+      />
 
       <Content>{content}</Content>
     </HeaderWrapper>
