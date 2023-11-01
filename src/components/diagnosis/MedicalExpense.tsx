@@ -1,10 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 import styled from "styled-components";
 
 import { EXPENSE_ARR } from "@/constants";
-import Link from "next/link";
 
 const MedicalExpense = () => {
   return (
@@ -161,5 +161,6 @@ const Button = styled.button`
   font-weight: 700;
   line-height: normal;
   margin-top: 229px;
+  margin-left: 5px;
   cursor: pointer;
 `;
