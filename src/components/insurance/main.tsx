@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 import styled from "styled-components";
@@ -76,10 +77,12 @@ const Main = () => {
       <SemiTitle>자주 이용하는 서비스</SemiTitle>
 
       <ServiceBox>
-        <ServiceCard>
-          <Image src="/svgs/Claim.svg" width={12} height={16} alt="Claim" />
-          <ServiceContent>보험금청구</ServiceContent>
-        </ServiceCard>
+        <Link href="/payment">
+          <ServiceCard>
+            <Image src="/svgs/Claim.svg" width={12} height={16} alt="Claim" />
+            <ServiceContent>보험금청구</ServiceContent>
+          </ServiceCard>
+        </Link>
 
         <ServiceCard>
           <Image src="/svgs/Payment.svg" width={15} height={15} alt="Claim" />

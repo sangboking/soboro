@@ -160,3 +160,21 @@ export const NOTICE_ARR = [
     content: "일 3회 이상 예약 취소는 24시간동안 예약이 제한됩니다.",
   },
 ];
+
+export const EXPENSE_ARR = [
+  {
+    id: 1,
+    date: "2023년11월10일",
+    price: "55,000원",
+  },
+  {
+    id: 2,
+    date: "2023년11월03일",
+    price: "46,000원",
+  },
+  {
+    id: 1,
+    date: "2023년10월27일",
+    price: "55,000원",
+  },
+];

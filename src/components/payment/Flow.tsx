@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 import styled from "styled-components";
@@ -58,7 +59,9 @@ const Flow = () => {
         <FlowContent style={{ top: "23px" }}>접수완료 및 심사진행</FlowContent>
       </Flow2Box>
 
-      <Button>보험금청구 바로 시작</Button>
+      <Link href="/payment/search">
+        <Button>보험금청구 바로 시작</Button>
+      </Link>
     </FlowWrapper>
   );
 };
