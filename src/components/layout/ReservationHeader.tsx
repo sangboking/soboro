@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { useRouter } from "next/navigation";
 import React from "react";
 
@@ -19,7 +18,7 @@ const ReservationHeader = ({ content }: Props) => {
         width={20}
         height={18.46}
         alt="BackArrow"
-        style={{ cursor: "pointer" }}
+        style={{ cursor: "pointer", position: "absolute", left: "20px" }}
         onClick={() => router.back()}
       />
 
@@ -35,9 +34,11 @@ const HeaderWrapper = styled.header`
   display: flex;
   padding: 15px 0px 15px 20px;
   align-items: center;
+  justify-content: center;
   gap: 122px;
   border-bottom: 0.5px solid #dedede;
   background-color: #fff;
+  position: relative;
 `;
 
 const Content = styled.h2`

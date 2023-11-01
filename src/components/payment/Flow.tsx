@@ -73,6 +73,7 @@ const FlowWrapper = styled.div`
   height: 751px;
   padding-top: 35px;
   padding-left: 25px;
+  position: relative;
 `;
 
 const Title = styled.h4`
@@ -123,6 +124,9 @@ const Button = styled.button`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin-top: 244px;
   cursor: pointer;
+  box-shadow: 0px 4px 0px 0px rgba(131, 131, 131, 0.25);
+  position: absolute;
+  bottom: 59px;
+  left: 27px;
 `;

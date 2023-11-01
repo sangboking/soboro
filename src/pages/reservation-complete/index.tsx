@@ -1,8 +1,26 @@
-import React from "react";
+/* eslint-disable react-hooks/rules-of-hooks */
+import { useRouter } from "next/navigation";
+import React, { useEffect } from "react";
 
 import styled from "styled-components";
 
 const index = () => {
+  const router = useRouter();
+
+  const timeout = () => {
+    return setTimeout(() => {
+      router.push("/insurance");
+    }, 2000);
+  };
+
+  useEffect(() => {
+    timeout();
+
+    return () => {
+      clearTimeout(timeout());
+    };
+  }, []);
+
   return <CompleteWrapper>예약이 완료되었습니다.</CompleteWrapper>;
 };
 

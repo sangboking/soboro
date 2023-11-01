@@ -62,6 +62,7 @@ const ConfirmWrapper = styled.div`
   width: 100%;
   height: 751px;
   padding-top: 21px;
+  position: relative;
 `;
 
 const ContentBox = styled.div`
@@ -146,7 +147,11 @@ const Button = styled.button`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin-top: 198px;
-  margin-left: 27px;
+  position: absolute;
+
   cursor: pointer;
+  box-shadow: 0px 4px 0px 0px rgba(131, 131, 131, 0.25);
+  position: absolute;
+  bottom: 59px;
+  left: 27px;
 `;

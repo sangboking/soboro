@@ -49,6 +49,8 @@ const AccountWrapper = styled.div`
   width: 100%;
   height: 751px;
   padding-top: 19px;
+
+  position: relative;
 `;
 
 const Title = styled.h2`
@@ -114,9 +116,11 @@ const Button = styled.button`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin-top: 309px;
   cursor: pointer;
-  margin-left: 27px;
+  position: absolute;
+  box-shadow: 0px 4px 0px 0px rgba(131, 131, 131, 0.25);
+  bottom: 59px;
+  left: 27px;
 `;
 
 const CustomInputBox = styled.input`

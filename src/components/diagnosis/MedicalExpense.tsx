@@ -54,6 +54,7 @@ const MedicalExpenseWrapper = styled.div`
   height: 670px;
   padding-top: 20px;
   padding-left: 22px;
+  position: relative;
 `;
 
 const Title = styled.h4`
@@ -160,7 +161,9 @@ const Button = styled.button`
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin-top: 229px;
-  margin-left: 5px;
+
   cursor: pointer;
+  position: absolute;
+  bottom: 59px;
+  left: 27px;
 `;
