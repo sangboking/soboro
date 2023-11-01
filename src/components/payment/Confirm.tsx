@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 import styled from "styled-components";
@@ -51,7 +52,9 @@ const Confirm = () => {
         금액에 따라 추가 서류 요청이 있을 수 있습니다.
       </CautionBox>
 
-      <Button>청구하기</Button>
+      <Link href="/payment/complete">
+        <Button>청구하기</Button>
+      </Link>
     </ConfirmWrapper>
   );
 };
