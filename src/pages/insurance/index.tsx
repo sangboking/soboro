@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import InsuranceHeader from "@/components/layout/InsuranceHeader";
 import Main from "@/components/insurance/main";
-import Navbar from "@/components/layout/Navbar";
+import Flow2Navbar from "@/components/layout/Flow2Navbar";
 
 const index = () => {
   return (
@@ -13,7 +13,7 @@ const index = () => {
 
       <Main />
 
-      <Navbar />
+      <Flow2Navbar />
     </InsuranceWrapper>
   );
 };

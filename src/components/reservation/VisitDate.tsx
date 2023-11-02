@@ -46,7 +46,9 @@ const VisitDate = () => {
 
             <DateBox>
               {DATE_ARR_1.map((data) => (
-                <Day key={data}>{data}</Day>
+                <Day key={data.id} color={data.color}>
+                  {data.data}
+                </Day>
               ))}
             </DateBox>
 
@@ -70,7 +72,9 @@ const VisitDate = () => {
 
             <DateBox>
               {DATE_ARR_5.map((data) => (
-                <Day key={data}>{data}</Day>
+                <Day key={data.id} color={data.color}>
+                  {data.data}
+                </Day>
               ))}
             </DateBox>
           </ContentBox>
@@ -84,6 +88,10 @@ export default VisitDate;
 
 interface DateProps {
   date: string;
+}
+
+interface DayProps {
+  color?: string;
 }
 
 const VisitDateWrapper = styled.div`
@@ -175,7 +183,7 @@ const Date = styled.div<DateProps>`
   line-height: 18px;
 `;
 
-const Day = styled.div`
+const Day = styled.div<DayProps>`
   display: flex;
   width: 40px;
   height: 40px;
@@ -187,4 +195,5 @@ const Day = styled.div`
   font-style: normal;
   font-weight: 500;
   line-height: 18px;
+  color: ${(props) => (props.color === "gray" ? "#aeaeae" : "#555")};
 `;

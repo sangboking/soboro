@@ -161,11 +161,74 @@ export const ANIMAL_ARR = [
 ];
 
 export const DAY_ARR = ["일", "월", "화", "수", "목", "금", "토"];
-export const DATE_ARR_1 = ["29", "30", "31", "1", "2", "3", "4"];
+export const DATE_ARR_1 = [
+  {
+    id: 1,
+    data: "29",
+    color: "gray",
+  },
+  {
+    id: 2,
+    data: "30",
+    color: "gray",
+  },
+  {
+    id: 3,
+    data: "31",
+    color: "gray",
+  },
+  {
+    id: 4,
+    data: "1",
+  },
+  {
+    id: 5,
+    data: "2",
+  },
+  {
+    id: 6,
+    data: "3",
+  },
+  {
+    id: 7,
+    data: "4",
+  },
+];
 export const DATE_ARR_2 = ["5", "6", "7", "8", "9", "10", "11"];
 export const DATE_ARR_3 = ["12", "13", "14", "15", "16", "17", "18"];
 export const DATE_ARR_4 = ["19", "20", "21", "22", "23", "24", "25"];
-export const DATE_ARR_5 = ["26", "27", "28", "29", "30", "1", "2"];
+export const DATE_ARR_5 = [
+  {
+    id: 1,
+    data: "26",
+  },
+  {
+    id: 2,
+    data: "27",
+  },
+  {
+    id: 3,
+    data: "28",
+  },
+  {
+    id: 4,
+    data: "29",
+  },
+  {
+    id: 5,
+    data: "30",
+  },
+  {
+    id: 6,
+    data: "1",
+    color: "gray",
+  },
+  {
+    id: 7,
+    data: "2",
+    color: "gray",
+  },
+];
 
 export const NOTICE_ARR = [
   {

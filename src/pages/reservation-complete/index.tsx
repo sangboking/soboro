@@ -32,7 +32,6 @@ const CompleteWrapper = styled.div`
   color: #fff;
 
   text-shadow: 1px 1px 0px rgba(0, 0, 0, 0.25);
-  font-family: Inter;
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
