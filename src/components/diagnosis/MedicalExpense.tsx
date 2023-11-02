@@ -29,7 +29,7 @@ const MedicalExpense = () => {
           <ExpenseCard key={data.id}>
             {checkArr.includes(data.id) ? (
               <Image
-                src="/svgs/BlueCheckbox.svg"
+                src="/svgs/BlueCheck.svg"
                 width={20}
                 height={20}
                 alt="Checkbox"
