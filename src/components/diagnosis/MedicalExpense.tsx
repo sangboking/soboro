@@ -26,7 +26,7 @@ const MedicalExpense = () => {
 
       <ExpenseFlexbox>
         {EXPENSE_ARR.map((data) => (
-          <ExpenseCard key={data.id}>
+          <ExpenseCard key={data.id} onClick={() => onClickCheckbox(data.id)}>
             {checkArr.includes(data.id) ? (
               <Image
                 src="/svgs/BlueCheck.svg"
@@ -34,7 +34,6 @@ const MedicalExpense = () => {
                 height={20}
                 alt="Checkbox"
                 style={{ cursor: "pointer" }}
-                onClick={() => onClickCheckbox(data.id)}
               />
             ) : (
               <Image
@@ -43,7 +42,6 @@ const MedicalExpense = () => {
                 height={20}
                 alt="Checkbox"
                 style={{ cursor: "pointer" }}
-                onClick={() => onClickCheckbox(data.id)}
               />
             )}
 
@@ -111,6 +109,7 @@ const ExpenseCard = styled.div`
   display: flex;
   align-items: center;
   gap: 15px;
+  cursor: pointer;
 `;
 
 const ColummBox = styled.div`
