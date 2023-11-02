@@ -24,20 +24,18 @@ const Flow2Navbar = () => {
         />
       </Link>
 
-      <Link href="/review">
-        <Image
-          src="/svgs/StarBox.svg"
-          width={22}
-          height={22}
-          alt="StarBox"
-          style={{
-            position: "absolute",
-            left: "115px",
-            top: "15px",
-            cursor: "pointer",
-          }}
-        />
-      </Link>
+      <Image
+        src="/svgs/StarBox.svg"
+        width={22}
+        height={22}
+        alt="StarBox"
+        style={{
+          position: "absolute",
+          left: "115px",
+          top: "15px",
+          cursor: "pointer",
+        }}
+      />
 
       <Link href="/insurance">
         <Image

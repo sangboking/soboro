@@ -1,10 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 import styled from "styled-components";
 
 const Account = () => {
+  const [first, setFirst] = useState(false);
+  const [second, setSecond] = useState(false);
+  const [third, setThird] = useState(false);
+
   return (
     <AccountWrapper>
       <Title>보험 지급 계좌를 입력하세요</Title>
@@ -12,27 +16,62 @@ const Account = () => {
       <ColummBox>
         <ContentBox>
           <ContentTitle>반려동물</ContentTitle>
-          <InputBox placeholder="아이의 이름을 입력하세요." />
+          {first ? (
+            <OnBox>꾸꿍</OnBox>
+          ) : (
+            <InputBox
+              placeholder="아이의 이름을 입력하세요."
+              onClick={() => setFirst(!first)}
+            />
+          )}
         </ContentBox>
 
         <ContentBox>
           <ContentTitle>반려인</ContentTitle>
-          <InputBox placeholder="반려인의 이름을 입력하세요." />
+          {second ? (
+            <OnBox>유기현</OnBox>
+          ) : (
+            <InputBox
+              placeholder="반려인의 이름을 입력하세요."
+              onClick={() => setSecond(!second)}
+            />
+          )}
         </ContentBox>
 
         <ContentBox>
           <ContentTitle>반려인 계좌번호</ContentTitle>
-          <BankBox>
-            <BankName>KB국민</BankName>
-            <Image
-              src="/svgs/UnderArrow.svg"
-              width={10}
-              height={6}
-              alt="UnderArrow"
-              style={{ marginTop: "2px" }}
-            />
-          </BankBox>
-          <CustomInputBox placeholder="계좌번호를 입력하세요." />
+          {third ? (
+            <>
+              <BankBox>
+                <BankName>KB국민</BankName>
+                <Image
+                  src="/svgs/UnderArrow.svg"
+                  width={10}
+                  height={6}
+                  alt="UnderArrow"
+                  style={{ marginTop: "2px" }}
+                />
+              </BankBox>
+              <CustomOnBox>5780012344794</CustomOnBox>
+            </>
+          ) : (
+            <>
+              <BankBox>
+                <BankName>KB국민</BankName>
+                <Image
+                  src="/svgs/UnderArrow.svg"
+                  width={10}
+                  height={6}
+                  alt="UnderArrow"
+                  style={{ marginTop: "2px" }}
+                />
+              </BankBox>
+              <CustomInputBox
+                placeholder="계좌번호를 입력하세요."
+                onClick={() => setThird(!third)}
+              />
+            </>
+          )}
         </ContentBox>
       </ColummBox>
 
@@ -101,6 +140,21 @@ const InputBox = styled.input`
   }
 `;
 
+const OnBox = styled.div`
+  width: 340px;
+  height: 43px;
+  border-radius: 10px;
+  border: 1px solid #c8c8c8;
+  padding-left: 14px;
+  color: #111;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  display: flex;
+  align-items: center;
+`;
+
 const Button = styled.button`
   width: 339px;
   height: 46px;
@@ -137,6 +191,21 @@ const CustomInputBox = styled.input`
     font-weight: 400;
     line-height: normal;
   }
+`;
+
+const CustomOnBox = styled.div`
+  width: 340px;
+  height: 43px;
+  border-radius: 10px;
+  border: 1px solid #c8c8c8;
+  padding-left: 100px;
+  color: #111;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 `;
 
 const BankBox = styled.div`

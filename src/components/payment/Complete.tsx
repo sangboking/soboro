@@ -10,6 +10,8 @@ const Complete = () => {
       <SemiTitle>서류 심사는 주말 제외 최대 4일 정도 소요됩니다.</SemiTitle>
 
       <GageBar>
+        <Gage />
+
         <CharacterBox>
           <Image
             src="/images/CatFood.png"
@@ -27,7 +29,7 @@ const Complete = () => {
           />
         </CharacterBox>
 
-        <DateBox>9월 29일 지급 예정 </DateBox>
+        <DateBox>11월 29일 지급 예정 </DateBox>
 
         <BlueText>서류접수</BlueText>
         <CenterText>심사진행</CenterText>
@@ -94,6 +96,15 @@ const GageBar = styled.div`
   background: #d9d9d9;
   margin-top: 91px;
   margin-left: 20px;
+`;
+
+const Gage = styled.div`
+  width: 45px;
+  height: 8px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: #0091e2;
+  position: absolute;
 `;
 
 const CharacterBox = styled.div`
