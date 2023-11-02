@@ -263,7 +263,7 @@ export const EXPENSE_ARR = [
     price: "46,000원",
   },
   {
-    id: 1,
+    id: 3,
     date: "2023년10월27일",
     price: "55,000원",
   },

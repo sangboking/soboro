@@ -66,7 +66,6 @@ const DivideBox = styled.div`
 
 const GrayBox = styled.div`
   width: 393px;
-  height: 197px;
-  background-color: #f9f9f9;
-  margin-top: 20px;
+  height: 50px;
+  background-color: #fff;
 `;

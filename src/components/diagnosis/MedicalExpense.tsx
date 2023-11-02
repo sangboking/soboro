@@ -1,12 +1,25 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 import styled from "styled-components";
 
 import { EXPENSE_ARR } from "@/constants";
 
 const MedicalExpense = () => {
+  const [checkArr, setCheckArr] = useState<number[]>([]);
+
+  const onClickCheckbox = (id: number) => {
+    if (checkArr.includes(id)) {
+      const tempArr = [...checkArr].filter((el) => el !== id);
+      return setCheckArr([...tempArr]);
+    }
+
+    const tempArr = [...checkArr];
+    tempArr.push(id);
+    setCheckArr([...tempArr]);
+  };
+
   return (
     <MedicalExpenseWrapper>
       <Title>24시청담우리동물병원</Title>
@@ -15,10 +28,16 @@ const MedicalExpense = () => {
         {EXPENSE_ARR.map((data) => (
           <ExpenseCard key={data.id}>
             <Image
-              src="/svgs/Checkbox.svg"
+              src={
+                checkArr.includes(data.id)
+                  ? "/svgs/BlueCheckbox.svg"
+                  : "/svgs/Checkbox.svg"
+              }
               width={20}
               height={20}
               alt="Checkbox"
+              style={{ cursor: "pointer" }}
+              onClick={() => onClickCheckbox(data.id)}
             />
 
             <ColummBox>
