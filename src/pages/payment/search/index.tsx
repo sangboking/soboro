@@ -8,17 +8,13 @@ import styled from "styled-components";
 const index = () => {
   const router = useRouter();
 
-  const timeout = () => {
-    return setTimeout(() => {
+  useEffect(() => {
+    const timerId = setTimeout(() => {
       router.push("/diagnosis");
     }, 2000);
-  };
-
-  useEffect(() => {
-    timeout();
 
     return () => {
-      clearTimeout(timeout());
+      clearTimeout(timerId);
     };
   }, []);
 
