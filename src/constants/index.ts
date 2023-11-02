@@ -43,10 +43,10 @@ export const RECEIPT_ARR = [
   },
 ];
 
-export const PRODUCT_ARR = [
+export const PRODUCT_ARR_1 = [
   {
     id: 1,
-    url: "/images/Product1.jpeg",
+    url: "/images/Product1.png",
     name: `베터 반려동물 영양 파우
     더 8종 (면역/눈/관절/...`,
     price: "27,000",
@@ -54,7 +54,7 @@ export const PRODUCT_ARR = [
   },
   {
     id: 2,
-    url: "/images/Product2.jpeg",
+    url: "/images/Product2.png",
     name: `바이오강스 뉴트리리페어
     민감피부용 샴푸 250ml`,
     price: "27,000",
@@ -62,11 +62,38 @@ export const PRODUCT_ARR = [
   },
   {
     id: 3,
-    url: "/images/Product3.jpeg",
+    url: "/images/Product3.png",
     name: `우프앤먀오 강아지 피부
     영양제 60g`,
     price: "35,000",
     star: "23",
+  },
+];
+
+export const PRODUCT_ARR_2 = [
+  {
+    id: 1,
+    url: "/images/Product4.png",
+    name: `버박 파이오덤(곰팡이성)
+    샴푸 200ml`,
+    price: "21,000",
+    star: "6,063",
+  },
+  {
+    id: 2,
+    url: "/images/Product5.png",
+    name: `포켄스  바이비드 약용샴
+    푸 300ml`,
+    price: "17,000",
+    star: "3,156",
+  },
+  {
+    id: 3,
+    url: "/images/Product6.png",
+    name: `페록시덤 약용샴푸 200
+    ml`,
+    price: "23,000",
+    star: "2,246",
   },
 ];
 

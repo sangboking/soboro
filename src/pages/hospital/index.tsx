@@ -16,10 +16,11 @@ const Hospital = () => {
       <Header content="병원 정보" />
 
       <Image
-        src="/images/Hospital.jpeg"
+        src="/images/Hospital.png"
         width={393}
         height={220}
         alt="Hospital"
+        quality={100}
       />
 
       <HospitalInfo />

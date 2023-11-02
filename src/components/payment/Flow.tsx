@@ -24,7 +24,7 @@ const Flow = () => {
       <Flow2Box>
         <Image src="/svgs/Flow2.svg" width={340} height={84.4} alt="Flow2" />
         <Image
-          src="/svgs/Flow2-2.svg"
+          src="/images/Flow2-2.png"
           width={24}
           height={24}
           alt="Flow2-2"

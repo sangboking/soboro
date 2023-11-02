@@ -10,22 +10,13 @@ const AnimalChoice = () => {
 
       <CatChoiceBox>
         <CatColummBox>
-          <Image
-            src="/images/Cat_1.jpeg"
-            width={80}
-            height={80}
-            alt="Cat_1"
-            style={{
-              borderRadius: "40px",
-              border: "3px solid #0091e2",
-            }}
-          />
+          <Image src="/images/Cat_1.png" width={80} height={80} alt="Cat_1" />
           <CatName>꾸꿍</CatName>
         </CatColummBox>
 
         <CatColummBox2>
           <Image
-            src="/images/Cat_2.jpeg"
+            src="/images/Cat_2.png"
             width={70}
             height={70}
             alt="Cat_2"

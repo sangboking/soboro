@@ -23,7 +23,7 @@ const ReviewBox = () => {
       <PetInfo>말티즈 . 4살 . 수컷(중성화)</PetInfo>
 
       <Image
-        src="/images/Puppy.jpeg"
+        src="/images/Puppy.png"
         width={165}
         height={161}
         alt="Puppy"

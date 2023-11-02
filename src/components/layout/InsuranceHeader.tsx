@@ -2,18 +2,21 @@ import React from "react";
 import Image from "next/image";
 
 import styled from "styled-components";
+import Link from "next/link";
 
 const InsuranceHeader = () => {
   return (
     <HeaderWrapper>
       <ToggleBox>
-        <Image
-          src="/svgs/ToggleLeft2.svg"
-          width={18}
-          height={18}
-          alt="Toggle-Left"
-          style={{ marginLeft: "7px" }}
-        />
+        <Link href="/">
+          <Image
+            src="/svgs/ToggleLeft2.svg"
+            width={18}
+            height={18}
+            alt="Toggle-Left"
+            style={{ marginLeft: "7px" }}
+          />
+        </Link>
 
         <Image
           src="/svgs/WhiteCircle.svg"

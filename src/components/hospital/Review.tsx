@@ -15,7 +15,7 @@ const Review = () => {
         {[1, 2, 3].map((data) => (
           <Image
             key={data}
-            src={`/images/Animal${data}.jpeg`}
+            src={`/images/Animal${data}.png`}
             width={106}
             height={106}
             alt="Animal"

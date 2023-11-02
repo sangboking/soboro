@@ -1,10 +1,13 @@
-import { PRODUCT_ARR } from "@/constants";
 import Image from "next/image";
 import React from "react";
 
 import styled from "styled-components";
 
-const ProductBox = () => {
+interface Props {
+  productArr: any;
+}
+
+const ProductBox = ({ productArr }: Props) => {
   return (
     <ProductBoxWrapper>
       <Title>
@@ -12,7 +15,7 @@ const ProductBox = () => {
       </Title>
 
       <ProducFlextBox>
-        {PRODUCT_ARR.map((data) => (
+        {productArr.map((data: any) => (
           <ColummBox key={data.id}>
             <Image
               src={data.url}

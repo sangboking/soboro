@@ -7,6 +7,8 @@ import ReviewBox from "@/components/review/ReviewBox";
 import ProductBox from "@/components/review/ProductBox";
 import ReviewNavbar from "@/components/layout/ReviewNavbar";
 
+import { PRODUCT_ARR_1 } from "@/constants";
+
 const ReviewDetail = () => {
   return (
     <ReviewDetailWrapper>
@@ -16,7 +18,7 @@ const ReviewDetail = () => {
 
       <DivideBox />
 
-      <ProductBox />
+      <ProductBox productArr={PRODUCT_ARR_1} />
 
       <GrayBox />
 

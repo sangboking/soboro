@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 
 import styled from "styled-components";
+import Link from "next/link";
 
 const SoboroHeader = () => {
   return (
@@ -14,22 +15,26 @@ const SoboroHeader = () => {
           alt="Toggle-Left"
         />
 
-        <Image
-          src="/svgs/ToggleRight.svg"
-          width={14.25}
-          height={19}
-          alt="Toggle-Right"
-          style={{ marginLeft: "9px" }}
-        />
+        <Link href="/insurance">
+          <Image
+            src="/svgs/ToggleRight.svg"
+            width={14.25}
+            height={19}
+            alt="Toggle-Right"
+            style={{ marginLeft: "9px" }}
+          />
+        </Link>
       </ToggleBox>
 
-      <Image
-        src="/svgs/Logo.svg"
-        width={70}
-        height={29}
-        alt="Logo"
-        style={{ marginLeft: "78px", marginTop: "18px" }}
-      />
+      <Link href="/">
+        <Image
+          src="/svgs/Logo.svg"
+          width={70}
+          height={29}
+          alt="Logo"
+          style={{ marginLeft: "78px", marginTop: "18px" }}
+        />
+      </Link>
 
       <Image
         src="/svgs/Lens.svg"

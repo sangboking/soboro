@@ -4,8 +4,9 @@ import styled from "styled-components";
 
 import HomeHeader from "@/components/layout/HomeHeader";
 import Complete from "@/components/payment/Complete";
-
 import ProductBox from "@/components/review/ProductBox";
+
+import { PRODUCT_ARR_2 } from "@/constants";
 
 const index = () => {
   return (
@@ -16,7 +17,7 @@ const index = () => {
 
       <DivideBox />
 
-      <ProductBox />
+      <ProductBox productArr={PRODUCT_ARR_2} />
     </CompleteWrapper>
   );
 };
