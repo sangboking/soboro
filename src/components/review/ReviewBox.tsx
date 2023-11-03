@@ -44,7 +44,7 @@ const ReviewBox = () => {
       </ReviewContent>
 
       <TagBox>
-        <Tag>#공팡이성피부염</Tag>
+        <Tag>#곰팡이성피부염</Tag>
         <Tag>#피부긁음</Tag>
         <Tag>#피부딱지</Tag>
         <Tag>#피부상처</Tag>
