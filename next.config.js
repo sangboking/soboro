@@ -1,9 +1,21 @@
 /** @type {import('next').NextConfig} */
+const withPlugins = require("next-compose-plugins");
+const withPWA = require("next-pwa")({
+  dest: "public",
+  disable: process.env.NODE_ENV !== "production",
+});
+
 const nextConfig = {
-  reactStrictMode: true,
-  compiler: {
-    styledComponents: true,
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "**",
+      },
+    ],
+    minimumCacheTTL: 60,
   },
+  reactStrictMode: true,
 };
 
-module.exports = nextConfig;
+module.exports = withPlugins([[withPWA], nextConfig]);

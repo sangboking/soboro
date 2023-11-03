@@ -1,0 +1,21 @@
+{
+  "name": "소보로",
+  "display": "standalone",
+  "start_url": "/",
+  "description": "소보로",
+  "background_color": "#43BBFF",
+  "short_name": "소보로",
+  "theme_color": "#43BBFF",
+  "icons": [
+    {
+      "src": "/images/Soboro.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    },
+    {
+      "src": "/images/SnackLogo-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
+    }
+  ]
+}
