@@ -59,7 +59,7 @@ const HeaderWrapper = styled.header`
   position: sticky;
   top: 0;
   left: 0;
-  z-index: 20;
+  z-index: 9999;
 `;
 
 const ToggleBox = styled.div`

@@ -29,7 +29,7 @@ const HomeHeaderWrapper = styled.header`
   position: sticky;
   top: 0;
   left: 0;
-  z-index: 20;
+  z-index: 9999;
   padding-left: 20px;
   padding-top: 15px;
   padding-bottom: 15px;

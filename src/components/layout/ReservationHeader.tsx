@@ -39,6 +39,7 @@ const HeaderWrapper = styled.header`
   border-bottom: 0.5px solid #dedede;
   background-color: #fff;
   position: relative;
+  z-index: 9999;
 `;
 
 const Content = styled.h2`

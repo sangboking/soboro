@@ -29,6 +29,7 @@ const ReservationFooterWrapper = styled.footer`
   padding-left: 20px;
   display: flex;
   gap: 10px;
+  z-index: 9999;
 `;
 
 const ReviewButton = styled.button`
