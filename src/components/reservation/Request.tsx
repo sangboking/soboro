@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 
 import styled from "styled-components";
@@ -6,6 +6,8 @@ import styled from "styled-components";
 import { NOTICE_ARR } from "@/constants";
 
 const Request = () => {
+  const [request, setRequest] = useState(false);
+
   return (
     <RequestWrapper>
       <VisitBox>
@@ -29,9 +31,13 @@ const Request = () => {
 
       <AgreeTitle>개인정보 제공 동의</AgreeTitle>
 
-      <AgreeBox>
-        <AgreeContent>개인정보 제 3자 제공 동의 (필수)</AgreeContent>
-        <AgreeContent className="underline">보기</AgreeContent>
+      <AgreeBox request={request} onClick={() => setRequest(!request)}>
+        <AgreeContent request={request}>
+          개인정보 제 3자 제공 동의 (필수)
+        </AgreeContent>
+        <AgreeContent request={request} className="underline">
+          보기
+        </AgreeContent>
       </AgreeBox>
 
       <AgreeCaution>
@@ -47,6 +53,10 @@ const Request = () => {
 };
 
 export default Request;
+
+interface Props {
+  request: boolean;
+}
 
 const RequestWrapper = styled.div`
   width: 100%;
@@ -147,26 +157,28 @@ const AgreeTitle = styled.h4`
   margin-left: 25px;
 `;
 
-const AgreeBox = styled.div`
+const AgreeBox = styled.div<Props>`
   width: 340px;
   height: 44px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-radius: 10px;
-  background: #f5f5f5;
+  background: ${(props) => (props.request ? "#43BBFF" : "#f5f5f5")};
   margin-top: 12px;
   margin-left: 27px;
   padding-left: 20px;
   padding-right: 20px;
+  cursor: pointer;
 
   .underline {
     text-decoration: underline;
   }
 `;
 
-const AgreeContent = styled.h4`
+const AgreeContent = styled.h4<Props>`
   color: #979797;
+  color: ${(props) => (props.request ? "#fff" : "#979797")};
   font-size: 12px;
   font-style: normal;
   font-weight: 500;

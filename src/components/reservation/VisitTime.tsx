@@ -1,8 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 
 import styled from "styled-components";
 
 const VisitTime = () => {
+  const [checkArr, setCheckArr] = useState<string[]>([]);
+
+  const onClickCheckbox = (id: string) => {
+    if (checkArr.includes(id)) {
+      const tempArr = [...checkArr].filter((el) => el !== id);
+      return setCheckArr([...tempArr]);
+    }
+
+    const tempArr = [...checkArr];
+    tempArr.push(id);
+    setCheckArr([...tempArr]);
+  };
+
   return (
     <VisitTimeWrapper>
       <VisitBox>방문 시간</VisitBox>
@@ -12,9 +25,16 @@ const VisitTime = () => {
           <Title>오전</Title>
 
           <BadegBox style={{ marginTop: "15px" }}>
-            <Badge>10:30</Badge>
-            <Badge>11:00</Badge>
-            <Badge>11:30</Badge>
+            {["10:30", "11:00", "11:30"].map((data) => (
+              <Badge
+                key={data}
+                data={data}
+                checkArr={checkArr}
+                onClick={() => onClickCheckbox(data)}
+              >
+                {data}
+              </Badge>
+            ))}
           </BadegBox>
 
           <Title style={{ marginTop: "23px", marginBottom: "15px" }}>
@@ -23,22 +43,42 @@ const VisitTime = () => {
 
           <ColummBadgeBox>
             <BadegBox>
-              <Badge>10:30</Badge>
-              <Badge>11:00</Badge>
-              <Badge>11:30</Badge>
-              <Badge>11:30</Badge>
+              {["12:00", "12:30", "1:00", "1:30"].map((data) => (
+                <Badge
+                  key={data}
+                  data={data}
+                  checkArr={checkArr}
+                  onClick={() => onClickCheckbox(data)}
+                >
+                  {data}
+                </Badge>
+              ))}
             </BadegBox>
 
             <BadegBox>
-              <Badge>2:00</Badge>
-              <Badge>2:30</Badge>
-              <Badge>3:00</Badge>
-              <Badge>3:30</Badge>
+              {["2:00", "2:30", "3:00", "3:30"].map((data) => (
+                <Badge
+                  key={data}
+                  data={data}
+                  checkArr={checkArr}
+                  onClick={() => onClickCheckbox(data)}
+                >
+                  {data}
+                </Badge>
+              ))}
             </BadegBox>
 
             <BadegBox>
-              <Badge>4:00</Badge>
-              <Badge>4:30</Badge>
+              {["4:00", "4:30"].map((data) => (
+                <Badge
+                  key={data}
+                  data={data}
+                  checkArr={checkArr}
+                  onClick={() => onClickCheckbox(data)}
+                >
+                  {data}
+                </Badge>
+              ))}
             </BadegBox>
           </ColummBadgeBox>
         </TimeBox>
@@ -48,6 +88,11 @@ const VisitTime = () => {
 };
 
 export default VisitTime;
+
+interface Props {
+  data: string;
+  checkArr: string[];
+}
 
 const VisitTimeWrapper = styled.div`
   width: 100%;
@@ -96,7 +141,7 @@ const BadegBox = styled.div`
   gap: 12px;
 `;
 
-const Badge = styled.div`
+const Badge = styled.div<Props>`
   display: flex;
   width: 75px;
   height: 36px;
@@ -112,6 +157,14 @@ const Badge = styled.div`
   font-weight: 400;
   line-height: 16px;
   letter-spacing: -0.09px;
+  cursor: pointer;
+  background-color: ${(props) =>
+    props.checkArr.includes(props.data) ? "#eaeaea" : "#fff"};
+
+  color: ${(props) =>
+    props.checkArr.includes(props.data) ? "#aeaeae" : "#555"};
+  border: ${(props) =>
+    props.checkArr.includes(props.data) ? " none " : "1px solid #c8c8c8"};
 `;
 
 const ColummBadgeBox = styled.div`
