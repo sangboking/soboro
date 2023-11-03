@@ -38,7 +38,9 @@ const HeaderWrapper = styled.header`
   gap: 122px;
   border-bottom: 0.5px solid #dedede;
   background-color: #fff;
-  position: relative;
+  position: sticky;
+  top: 0;
+  left: 0;
   z-index: 9999;
 `;
 
