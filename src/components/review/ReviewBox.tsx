@@ -158,9 +158,8 @@ const Tag = styled.div`
   gap: 10px;
   flex-wrap: wrap;
   border-radius: 13.5px;
-  border: 1px solid #cfeeff;
-  background-color: #eff9ff;
-  color: #00a3ff;
+  background: #f0f0f0;
+  color: #555;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
@@ -177,7 +176,7 @@ const HospitalBox = styled.div`
   align-items: center;
   gap: 30px;
   border-radius: 8px;
-  border: 1px solid #dedede;
+  border: 1px solid #43bbff;
   background: #fff;
   margin-top: 30px;
   cursor: pointer;

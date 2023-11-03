@@ -89,4 +89,5 @@ const NavbarWrapper = styled.div`
   position: sticky;
   bottom: 0;
   left: 0;
+  z-index: 9999;
 `;

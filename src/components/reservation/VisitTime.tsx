@@ -3,21 +3,10 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const VisitTime = () => {
-  const [checkArr, setCheckArr] = useState<string[]>([]);
-
-  const onClickCheckbox = (id: string) => {
-    if (checkArr.includes(id)) {
-      const tempArr = [...checkArr].filter((el) => el !== id);
-      return setCheckArr([...tempArr]);
-    }
-
-    const tempArr = [...checkArr];
-    tempArr.push(id);
-    setCheckArr([...tempArr]);
-  };
+  const [visit, setVisit] = useState(false);
 
   return (
-    <VisitTimeWrapper>
+    <VisitTimeWrapper onClick={() => setVisit(!visit)}>
       <VisitBox>방문 시간</VisitBox>
 
       <TimeSection>
@@ -25,16 +14,9 @@ const VisitTime = () => {
           <Title>오전</Title>
 
           <BadegBox style={{ marginTop: "15px" }}>
-            {["10:30", "11:00", "11:30"].map((data) => (
-              <Badge
-                key={data}
-                data={data}
-                checkArr={checkArr}
-                onClick={() => onClickCheckbox(data)}
-              >
-                {data}
-              </Badge>
-            ))}
+            <Badge>10:30</Badge>
+            <Badge>11:00</Badge>
+            <Badge2 visit={visit}>11:30</Badge2>
           </BadegBox>
 
           <Title style={{ marginTop: "23px", marginBottom: "15px" }}>
@@ -44,40 +26,19 @@ const VisitTime = () => {
           <ColummBadgeBox>
             <BadegBox>
               {["12:00", "12:30", "1:00", "1:30"].map((data) => (
-                <Badge
-                  key={data}
-                  data={data}
-                  checkArr={checkArr}
-                  onClick={() => onClickCheckbox(data)}
-                >
-                  {data}
-                </Badge>
+                <Badge key={data}>{data}</Badge>
               ))}
             </BadegBox>
 
             <BadegBox>
               {["2:00", "2:30", "3:00", "3:30"].map((data) => (
-                <Badge
-                  key={data}
-                  data={data}
-                  checkArr={checkArr}
-                  onClick={() => onClickCheckbox(data)}
-                >
-                  {data}
-                </Badge>
+                <Badge key={data}>{data}</Badge>
               ))}
             </BadegBox>
 
             <BadegBox>
               {["4:00", "4:30"].map((data) => (
-                <Badge
-                  key={data}
-                  data={data}
-                  checkArr={checkArr}
-                  onClick={() => onClickCheckbox(data)}
-                >
-                  {data}
-                </Badge>
+                <Badge key={data}>{data}</Badge>
               ))}
             </BadegBox>
           </ColummBadgeBox>
@@ -90,12 +51,12 @@ const VisitTime = () => {
 export default VisitTime;
 
 interface Props {
-  data: string;
-  checkArr: string[];
+  visit: boolean;
 }
 
 const VisitTimeWrapper = styled.div`
   width: 100%;
+  cursor: pointer;
 `;
 
 const VisitBox = styled.div`
@@ -141,7 +102,7 @@ const BadegBox = styled.div`
   gap: 12px;
 `;
 
-const Badge = styled.div<Props>`
+const Badge = styled.div`
   display: flex;
   width: 75px;
   height: 36px;
@@ -158,15 +119,26 @@ const Badge = styled.div<Props>`
   line-height: 16px;
   letter-spacing: -0.09px;
   cursor: pointer;
-  background-color: ${(props) =>
-    props.checkArr.includes(props.data) ? "#eaeaea" : "#fff"};
-
-  color: ${(props) =>
-    props.checkArr.includes(props.data) ? "#aeaeae" : "#555"};
-  border: ${(props) =>
-    props.checkArr.includes(props.data) ? " none " : "1px solid #c8c8c8"};
 `;
 
+const Badge2 = styled.div<Props>`
+  display: flex;
+  width: 75px;
+  height: 36px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: ${(props) => (props.visit ? "none" : "1px solid #c8c8c8")};
+  background: ${(props) => (props.visit ? "#43BBFF" : "#fff")};
+  color: ${(props) => (props.visit ? "#fff" : "#555")};
+  text-align: center;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: -0.09px;
+  cursor: pointer;
+`;
 const ColummBadgeBox = styled.div`
   display: flex;
   flex-direction: column;

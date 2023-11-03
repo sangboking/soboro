@@ -200,31 +200,11 @@ export const DATE_ARR_4 = ["19", "20", "21", "22", "23", "24", "25"];
 export const DATE_ARR_5 = [
   {
     id: 1,
-    data: "26",
-  },
-  {
-    id: 2,
-    data: "27",
-  },
-  {
-    id: 3,
-    data: "28",
-  },
-  {
-    id: 4,
-    data: "29",
-  },
-  {
-    id: 5,
-    data: "30",
-  },
-  {
-    id: 6,
     data: "1",
     color: "gray",
   },
   {
-    id: 7,
+    id: 2,
     data: "2",
     color: "gray",
   },

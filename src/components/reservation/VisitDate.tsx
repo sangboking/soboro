@@ -1,7 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import {
   DATE_ARR_1,
   DATE_ARR_2,
@@ -12,11 +12,23 @@ import {
 } from "@/constants";
 
 const VisitDate = () => {
+  const [visit, setVisit] = useState(0);
+
+  const onClickDate = () => {
+    if (visit === 0) {
+      setVisit(30);
+    }
+
+    if (visit === 30) {
+      setVisit(0);
+    }
+  };
+
   return (
     <VisitDateWrapper>
       <VisitBox>방문 날짜</VisitBox>
 
-      <CalendarSection>
+      <CalendarSection onClick={onClickDate}>
         <CalendarBox>
           <Image
             src="/svgs/CalendarClip.svg"
@@ -71,6 +83,11 @@ const VisitDate = () => {
             </DateBox>
 
             <DateBox>
+              <Day>26</Day>
+              <Day>27</Day>
+              <Day>28</Day>
+              <Day>29</Day>
+              <DayCustom visit={visit}>30</DayCustom>
               {DATE_ARR_5.map((data) => (
                 <Day key={data.id} color={data.color}>
                   {data.data}
@@ -92,6 +109,10 @@ interface DateProps {
 
 interface DayProps {
   color?: string;
+}
+
+interface CustomProps {
+  visit: number;
 }
 
 const VisitDateWrapper = styled.div`
@@ -116,6 +137,7 @@ const CalendarSection = styled.div`
   height: 406px;
   padding-top: 40px;
   padding-left: 31px;
+  cursor: pointer;
 `;
 
 const CalendarBox = styled.div`
@@ -196,4 +218,21 @@ const Day = styled.div<DayProps>`
   font-weight: 500;
   line-height: 18px;
   color: ${(props) => (props.color === "gray" ? "#aeaeae" : "#555")};
+`;
+
+const DayCustom = styled.div<CustomProps>`
+  display: flex;
+  width: 40px;
+  height: 40px;
+  justify-content: center;
+  align-items: center;
+  color: #555;
+  text-align: center;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  color: ${(props) => (props.visit ? "#43BBFF" : "#555")};
+  border: ${(props) => props.visit && "1px solid #0091e2"};
+  border-radius: 30px;
 `;
