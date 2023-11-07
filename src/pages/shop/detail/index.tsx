@@ -1,10 +1,10 @@
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 
 import styled from "styled-components";
 
 import ShopDetailHeader from "@/components/layout/ShopDetailHeader";
-import Image from "next/image";
-import Link from "next/link";
 
 const index = () => {
   return (
@@ -39,7 +39,6 @@ const ShopDetailWrapper = styled.div`
   width: 393px;
   height: 100%;
   background-color: #fff;
-
   margin: 0 auto;
   position: relative;
 `;

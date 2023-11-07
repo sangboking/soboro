@@ -4,14 +4,14 @@ import React from "react";
 
 import styled from "styled-components";
 
-const ShopNavbar = () => {
+const CommunityNavbar = () => {
   return (
     <NavbarWrapper>
       <Image src="/svgs/Navbar.svg" fill alt="Navbar" />
 
       <Link href="/shop">
         <Image
-          src="/svgs/Home.svg"
+          src="/svgs/HomeGray.svg"
           width={20}
           height={20}
           alt="Home"
@@ -83,7 +83,7 @@ const ShopNavbar = () => {
   );
 };
 
-export default ShopNavbar;
+export default CommunityNavbar;
 
 const NavbarWrapper = styled.div`
   width: 393px;

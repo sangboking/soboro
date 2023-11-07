@@ -1,9 +1,36 @@
 import React from "react";
+import Image from "next/image";
 
 import styled from "styled-components";
 
+import CommunityHeader from "@/components/layout/CommunityHeader";
+import CommunityNavbar from "@/components/layout/CommunityNavbar";
+import Link from "next/link";
+
 const index = () => {
-  return <CommunityWrapper>index</CommunityWrapper>;
+  return (
+    <CommunityWrapper>
+      <CommunityHeader content="커뮤니티" />
+
+      <Image
+        src="/images/CommunityMenu.png"
+        width={393}
+        height={50}
+        alt="CommunityMenu"
+      />
+      <Link href="/findfamily">
+        <Image
+          src="/images/CommunityFrame.png"
+          width={393}
+          height={606}
+          alt="CommunityMenu"
+          style={{ marginBottom: "10px" }}
+        />
+      </Link>
+
+      <CommunityNavbar />
+    </CommunityWrapper>
+  );
 };
 
 export default index;
