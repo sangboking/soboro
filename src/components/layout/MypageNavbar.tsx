@@ -70,7 +70,7 @@ const MypageNavbar = () => {
 
       <Link href="mypage">
         <Image
-          src="/images/BlackMyPage.png"
+          src="/images/BlackMypage.png"
           width={22.169}
           height={22}
           alt="MyPage"
