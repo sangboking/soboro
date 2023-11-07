@@ -4,7 +4,7 @@ import React from "react";
 
 import styled from "styled-components";
 
-const CommunityNavbar = () => {
+const FindFamilyNavbar = () => {
   return (
     <NavbarWrapper>
       <Image src="/svgs/Navbar.svg" fill alt="Navbar" />
@@ -26,7 +26,7 @@ const CommunityNavbar = () => {
 
       <Link href="/community">
         <Image
-          src="/svgs/Community.svg"
+          src="/svgs/CommunityGray.svg"
           width={21}
           height={20.745}
           alt="StarBox"
@@ -56,7 +56,7 @@ const CommunityNavbar = () => {
 
       <Link href="/findfamily">
         <Image
-          src="/images/Heart.png"
+          src="/images/BlackHeart.png"
           width={22}
           height={20}
           alt="Cross"
@@ -85,7 +85,7 @@ const CommunityNavbar = () => {
   );
 };
 
-export default CommunityNavbar;
+export default FindFamilyNavbar;
 
 const NavbarWrapper = styled.div`
   width: 393px;

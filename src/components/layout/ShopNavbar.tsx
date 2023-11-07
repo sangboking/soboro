@@ -53,19 +53,20 @@ const ShopNavbar = () => {
           }}
         />
       </Link>
-
-      <Image
-        src="/images/Heart.png"
-        width={22}
-        height={20}
-        alt="Cross"
-        style={{
-          position: "absolute",
-          right: "115px",
-          top: "15px",
-          cursor: "pointer",
-        }}
-      />
+      <Link href="/findfamily">
+        <Image
+          src="/images/Heart.png"
+          width={22}
+          height={20}
+          alt="Cross"
+          style={{
+            position: "absolute",
+            right: "115px",
+            top: "15px",
+            cursor: "pointer",
+          }}
+        />
+      </Link>
 
       <Image
         src="/svgs/MyPage.svg"
