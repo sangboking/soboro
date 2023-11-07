@@ -13,6 +13,8 @@ const index = () => {
 
       <Image src="/images/BigCat.png" width={393} height={330} alt="BigCat" />
 
+      <Badge>보호</Badge>
+
       <Title>[고양이] 한국 고양이</Title>
 
       <Line />
@@ -65,4 +67,22 @@ const Line = styled.div`
   height: 1px;
   background-color: #dedede;
   margin-top: 16px;
+`;
+
+const Badge = styled.div`
+  width: 43px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background-color: #ffb542;
+  color: #111;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  position: absolute;
+  top: 72px;
+  left: 20px;
 `;

@@ -69,18 +69,20 @@ const CommunityNavbar = () => {
         />
       </Link>
 
-      <Image
-        src="/svgs/MyPage.svg"
-        width={22.169}
-        height={22}
-        alt="MyPage"
-        style={{
-          position: "absolute",
-          right: "45px",
-          top: "15px",
-          cursor: "pointer",
-        }}
-      />
+      <Link href="/mypage">
+        <Image
+          src="/svgs/MyPage.svg"
+          width={22.169}
+          height={22}
+          alt="MyPage"
+          style={{
+            position: "absolute",
+            right: "45px",
+            top: "15px",
+            cursor: "pointer",
+          }}
+        />
+      </Link>
     </NavbarWrapper>
   );
 };
