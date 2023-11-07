@@ -18,7 +18,7 @@ const ShopHeader = ({ handleChange, toggle }: Props) => {
           width={64}
           height={31}
           alt="ShopToggle"
-          style={{ marginTop: "8px", cursor: "pointer" }}
+          style={{ marginTop: "17px", cursor: "pointer" }}
           onClick={handleChange}
         />
       ) : (
@@ -27,7 +27,7 @@ const ShopHeader = ({ handleChange, toggle }: Props) => {
           width={64}
           height={31}
           alt="ShopToggle"
-          style={{ marginTop: "8px", cursor: "pointer" }}
+          style={{ marginTop: "17px", cursor: "pointer" }}
           onClick={handleChange}
         />
       )}
@@ -38,7 +38,7 @@ const ShopHeader = ({ handleChange, toggle }: Props) => {
           width={70}
           height={29}
           alt="Logo"
-          style={{ marginLeft: "78px", marginTop: "9px" }}
+          style={{ marginLeft: "78px", marginTop: "18px" }}
         />
       </Link>
 
@@ -49,7 +49,7 @@ const ShopHeader = ({ handleChange, toggle }: Props) => {
         alt="Search"
         style={{
           marginLeft: "76px",
-          marginTop: "12px",
+          marginTop: "24px",
         }}
       />
 
@@ -60,7 +60,7 @@ const ShopHeader = ({ handleChange, toggle }: Props) => {
         alt="Cart"
         style={{
           marginLeft: "17.65px",
-          marginTop: "12px",
+          marginTop: "24px",
         }}
       />
     </HeaderWrapper>
@@ -71,7 +71,7 @@ export default ShopHeader;
 
 const HeaderWrapper = styled.header`
   width: 100%;
-  height: 47px;
+  height: 58px;
   background-color: #ffb542;
   display: flex;
   padding-left: 20px;
@@ -80,15 +80,4 @@ const HeaderWrapper = styled.header`
   top: 0;
   left: 0;
   z-index: 9999;
-`;
-
-const ToggleBox = styled.div`
-  width: 64px;
-  height: 31px;
-  position: relative;
-  border-radius: 15.5px;
-  background: #ffe5cd;
-  display: flex;
-  align-items: center;
-  margin-top: 17px;
 `;
