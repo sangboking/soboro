@@ -5,6 +5,7 @@ import styled from "styled-components";
 
 import FindFamilyNavbar from "@/components/layout/FindFamilyNavbar";
 import Header from "@/components/layout/Header";
+import Link from "next/link";
 
 const index = () => {
   return (
@@ -19,18 +20,20 @@ const index = () => {
         style={{ marginTop: "20px", marginLeft: "20px" }}
       />
 
-      <Image
-        src="/images/FindCatFrame.png"
-        width={350}
-        height={606}
-        alt="FindCatFrame"
-        style={{
-          marginTop: "25px",
-          marginLeft: "22px",
-          marginBottom: "30px",
-          cursor: "pointer",
-        }}
-      />
+      <Link href="/findfamily/detail">
+        <Image
+          src="/images/FindCatFrame.png"
+          width={350}
+          height={606}
+          alt="FindCatFrame"
+          style={{
+            marginTop: "25px",
+            marginLeft: "22px",
+            marginBottom: "30px",
+            cursor: "pointer",
+          }}
+        />
+      </Link>
 
       <FindFamilyNavbar />
     </Wrapper>

@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import styled from "styled-components";
 
 import CommunityHeader from "@/components/layout/CommunityHeader";
 import CommunityNavbar from "@/components/layout/CommunityNavbar";
-import Link from "next/link";
 
 const index = () => {
   return (
