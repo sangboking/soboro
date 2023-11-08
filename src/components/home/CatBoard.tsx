@@ -12,6 +12,12 @@ const CatBoard = () => {
     setSelectedDisease(disease);
   };
 
+  const changeClassname = (disease: string) => {
+    if (disease === "눈") return "eye-toggle";
+    if (disease === "피부") return "skin-toggle";
+    return "default-toggle";
+  };
+
   return (
     <CatBoardWrapper>
       <Image
@@ -42,17 +48,14 @@ const CatBoard = () => {
             }}
           />
 
-          {selectedDisease === "눈" || selectedDisease === "피부" ? (
-            <Image
-              src="/svgs/BigLens.svg"
-              width={115}
-              height={115}
-              alt="BigLens"
-              className={
-                selectedDisease === "눈" ? "eye-toggle" : "skin-toggle"
-              }
-            />
-          ) : null}
+          <Image
+            src="/svgs/BigLens.svg"
+            width={115}
+            height={115}
+            alt="BigLens"
+            className={changeClassname(selectedDisease)}
+            style={{ position: "absolute", top: "10px", right: "10px" }}
+          />
 
           {selectedDisease === "눈" && (
             <>
@@ -76,16 +79,6 @@ const CatBoard = () => {
                 style={{ position: "absolute", top: "124px", right: "93px" }}
               />
             </>
-          )}
-
-          {selectedDisease !== "피부" && selectedDisease !== "눈" && (
-            <Image
-              src="/svgs/BigLens.svg"
-              width={45}
-              height={45}
-              alt="BigLens"
-              style={{ position: "absolute", right: "43px", top: "51px" }}
-            />
           )}
         </CatBox>
 
@@ -161,14 +154,20 @@ const CatBox = styled.div`
 
   .eye-toggle {
     position: absolute;
-    transition: 0.3s ease-in-out;
-    transform: translate(-165px, 50px);
+    transition: 0.5s ease-in-out;
+    transform: translate(-65px, 40px);
   }
 
   .skin-toggle {
     position: absolute;
-    transition: 0.3s ease-in-out;
-    transform: translate(-160px, 113px);
+    transition: 0.5s ease-in-out;
+    transform: translate(-58.5px, 104px);
+  }
+
+  .default-toggle {
+    position: absolute;
+    transition: 0.5s ease-in-out;
+    transform: scale(0.3);
   }
 `;
 
