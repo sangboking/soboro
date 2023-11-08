@@ -1,10 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 import styled from "styled-components";
 
 const CommunityNavbar = () => {
+  const [toggle, setToggle] = useState(false);
+
+  const handleClick = () => {
+    setToggle(!toggle);
+  };
+
   return (
     <NavbarWrapper>
       <Image src="/svgs/Navbar.svg" fill alt="Navbar" />
@@ -39,20 +45,20 @@ const CommunityNavbar = () => {
         />
       </Link>
 
-      <Link href="/shop">
-        <Image
-          src="/images/Life.png"
-          width={60}
-          height={60}
-          alt="Life"
-          style={{
-            position: "absolute",
-            right: "164px",
-            bottom: "62px",
-            cursor: "pointer",
-          }}
-        />
-      </Link>
+      <Image
+        src="/images/Life.png"
+        width={60}
+        height={60}
+        alt="Life"
+        style={{
+          position: "absolute",
+          right: "164px",
+          bottom: "62px",
+          cursor: "pointer",
+          zIndex: "10",
+        }}
+        onClick={handleClick}
+      />
 
       <Link href="/findfamily">
         <Image
@@ -66,6 +72,16 @@ const CommunityNavbar = () => {
             top: "15px",
             cursor: "pointer",
           }}
+        />
+      </Link>
+
+      <Link href="/">
+        <Image
+          src="/svgs/Life.svg"
+          width={52}
+          height={52}
+          alt="Life"
+          className={toggle ? `toggle` : "noToggle"}
         />
       </Link>
 
@@ -96,4 +112,24 @@ const NavbarWrapper = styled.div`
   bottom: 0;
   left: 0;
   z-index: 9999;
+
+  .toggle {
+    position: absolute;
+    left: 173.5px;
+    bottom: 70px;
+    z-index: 1;
+    cursor: pointer;
+    transition: 0.3s;
+    transform: translateY(-57px);
+  }
+
+  .noToggle {
+    position: absolute;
+    left: 173.5px;
+    bottom: 70px;
+    z-index: 1;
+    cursor: pointer;
+    transition: 0.3s;
+    transform: translateY(0px);
+  }
 `;

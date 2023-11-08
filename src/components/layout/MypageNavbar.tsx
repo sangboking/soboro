@@ -1,10 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 
 import styled from "styled-components";
 
 const MypageNavbar = () => {
+  const [toggle, setToggle] = useState(false);
+
+  const handleClick = () => {
+    setToggle(!toggle);
+  };
+
   return (
     <NavbarWrapper>
       <Image src="/svgs/Navbar.svg" fill alt="Navbar" />
@@ -39,20 +45,31 @@ const MypageNavbar = () => {
         />
       </Link>
 
-      <Link href="/shop">
+      <Image
+        src="/images/Life.png"
+        width={60}
+        height={60}
+        alt="Life"
+        style={{
+          position: "absolute",
+          right: "164px",
+          bottom: "62px",
+          cursor: "pointer",
+          zIndex: "10",
+        }}
+        onClick={handleClick}
+      />
+
+      <Link href="/">
         <Image
-          src="/images/Life.png"
-          width={60}
-          height={60}
+          src="/svgs/Life.svg"
+          width={52}
+          height={52}
           alt="Life"
-          style={{
-            position: "absolute",
-            right: "164px",
-            bottom: "62px",
-            cursor: "pointer",
-          }}
+          className={toggle ? `toggle` : "noToggle"}
         />
       </Link>
+
       <Link href="/findfamily">
         <Image
           src="/images/Heart.png"
@@ -95,4 +112,24 @@ const NavbarWrapper = styled.div`
   bottom: 0;
   left: 0;
   z-index: 9999;
+
+  .toggle {
+    position: absolute;
+    left: 173.5px;
+    bottom: 70px;
+    z-index: 1;
+    cursor: pointer;
+    transition: 0.3s;
+    transform: translateY(-57px);
+  }
+
+  .noToggle {
+    position: absolute;
+    left: 173.5px;
+    bottom: 70px;
+    z-index: 1;
+    cursor: pointer;
+    transition: 0.3s;
+    transform: translateY(0px);
+  }
 `;
