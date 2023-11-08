@@ -7,14 +7,25 @@ import styled from "styled-components";
 const Main = () => {
   return (
     <MainWrapper>
-      <Image src="/svgs/Output.svg" width={353} height={93} alt="Output" />
+      <Image
+        src="/svgs/Output.svg"
+        width={353}
+        height={93}
+        alt="Output"
+        style={{ zIndex: "5" }}
+      />
 
       <Image
         src="/svgs/Exit.svg"
         width={324}
         height={48}
         alt="Exit"
-        style={{ position: "absolute", top: "45px", right: "33px" }}
+        style={{
+          position: "absolute",
+          top: "45px",
+          right: "33px",
+          zIndex: "5",
+        }}
       />
 
       <Image
@@ -22,32 +33,25 @@ const Main = () => {
         width={292}
         height={16}
         alt="BlackCircle"
-        style={{ position: "absolute", top: "61px", right: "50px" }}
+        style={{
+          position: "absolute",
+          top: "61px",
+          right: "50px",
+          zIndex: "5",
+        }}
       />
 
-      <Image
-        src="/svgs/Paper.svg"
-        width={275}
-        height={205}
-        alt="Paper"
-        style={{ position: "absolute", top: "63px", right: "57px" }}
-      />
-
-      <Title>
-        반려동물 &nbsp;<div>11월 보험료</div>
-      </Title>
-      <Price>43,700원</Price>
-
-      <Line />
-
-      <FlexBox>
-        <LeftBox>
-          <Image src="/svgs/Bill.svg" width={18} height={20} alt="bill" />
-          <LeftTitle>보험 내역</LeftTitle>
-        </LeftBox>
-
-        <Image src="/svgs/RightArrow.svg" width={10} height={10} alt="bill" />
-      </FlexBox>
+      <OpacityBox>
+        <Recipe>
+          <Image
+            src="/images/Recipe.png"
+            width={269}
+            height={197}
+            alt="Recipe"
+            className="recipe"
+          />
+        </Recipe>
+      </OpacityBox>
 
       <MainTitle>
         3세 페르시안
@@ -102,69 +106,27 @@ const MainWrapper = styled.div`
   position: relative;
 `;
 
-const Title = styled.h4`
-  color: #0091e2;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
+const OpacityBox = styled.div`
+  width: 269.145px;
+  height: 196.528px;
   position: absolute;
-  top: 83px;
-  left: 80px;
-  display: flex;
+  top: 65px;
+  left: 62px;
+  z-index: 50;
+  overflow: hidden;
+`;
 
-  div {
-    color: #111;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+const Recipe = styled.div`
+  animation: slideUp 1.2s ease-in-out forwards;
+  @keyframes slideUp {
+    0% {
+      transform: translateY(-160px);
+    }
+
+    100% {
+      transform: translateY(0px);
+    }
   }
-`;
-
-const Price = styled.h4`
-  color: #111;
-  font-size: 28px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-  position: absolute;
-  top: 107px;
-  left: 80px;
-`;
-
-const Line = styled.div`
-  width: 246px;
-  height: 1px;
-  background-color: #f0f0f0;
-  position: absolute;
-  top: 165px;
-  left: 80px;
-`;
-
-const FlexBox = styled.div`
-  display: flex;
-  width: 242px;
-  height: 16px;
-  justify-content: space-between;
-  align-items: center;
-  position: absolute;
-  top: 193px;
-  left: 80px;
-`;
-
-const LeftBox = styled.div`
-  display: flex;
-  align-items: flex-start;
-  gap: 13px;
-`;
-
-const LeftTitle = styled.h4`
-  color: #767676;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
 `;
 
 const MainTitle = styled.h3`

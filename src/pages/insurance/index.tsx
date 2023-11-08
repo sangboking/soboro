@@ -26,4 +26,5 @@ const InsuranceWrapper = styled.div`
   background-color: #eff9ff;
   margin: 0 auto;
   position: relative;
+  z-index: 9999;
 `;

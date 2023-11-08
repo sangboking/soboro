@@ -42,15 +42,20 @@ const CatBoard = () => {
             }}
           />
 
+          {selectedDisease === "눈" || selectedDisease === "피부" ? (
+            <Image
+              src="/svgs/BigLens.svg"
+              width={115}
+              height={115}
+              alt="BigLens"
+              className={
+                selectedDisease === "눈" ? "eye-toggle" : "skin-toggle"
+              }
+            />
+          ) : null}
+
           {selectedDisease === "눈" && (
             <>
-              <Image
-                src="/svgs/BigLens.svg"
-                width={115}
-                height={115}
-                alt="BigLens"
-                style={{ position: "absolute", top: "50px", right: "75px" }}
-              />
               <Image
                 src="/svgs/Eye.svg"
                 width={77}
@@ -64,13 +69,6 @@ const CatBoard = () => {
           {selectedDisease === "피부" && (
             <>
               <Image
-                src="/svgs/BigLens.svg"
-                width={115}
-                height={115}
-                alt="BigLens"
-                style={{ position: "absolute", top: "113px", right: "69px" }}
-              />
-              <Image
                 src="/svgs/Skin.svg"
                 width={80}
                 height={80}
@@ -78,6 +76,16 @@ const CatBoard = () => {
                 style={{ position: "absolute", top: "124px", right: "93px" }}
               />
             </>
+          )}
+
+          {selectedDisease !== "피부" && selectedDisease !== "눈" && (
+            <Image
+              src="/svgs/BigLens.svg"
+              width={45}
+              height={45}
+              alt="BigLens"
+              style={{ position: "absolute", right: "43px", top: "51px" }}
+            />
           )}
         </CatBox>
 
@@ -150,6 +158,18 @@ const CatBox = styled.div`
   border: 1px solid #c8c8c8;
   margin-top: 12px;
   position: relative;
+
+  .eye-toggle {
+    position: absolute;
+    transition: 0.3s ease-in-out;
+    transform: translate(-165px, 50px);
+  }
+
+  .skin-toggle {
+    position: absolute;
+    transition: 0.3s ease-in-out;
+    transform: translate(-160px, 113px);
+  }
 `;
 
 const DiseaseBox = styled.div`
