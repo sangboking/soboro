@@ -1,9 +1,10 @@
-import MypageHeader from "@/components/layout/MypageHeader";
-import MypageNavbar from "@/components/layout/MypageNavbar";
 import Image from "next/image";
 import React from "react";
 
 import styled from "styled-components";
+
+import MypageHeader from "@/components/layout/MypageHeader";
+import MypageNavbar from "@/components/layout/MypageNavbar";
 
 const index = () => {
   return (

@@ -42,7 +42,7 @@ const CatBoard = () => {
             }}
           />
 
-          {selectedDisease === "눈" ? (
+          {selectedDisease === "눈" && (
             <>
               <Image
                 src="/svgs/BigLens.svg"
@@ -59,14 +59,25 @@ const CatBoard = () => {
                 style={{ position: "absolute", top: "62.5px", right: "100px" }}
               />
             </>
-          ) : (
-            <Image
-              src="/svgs/Glasses.svg"
-              width={45}
-              height={45}
-              alt="Glasses"
-              style={{ position: "absolute", top: "51px", right: "43px" }}
-            />
+          )}
+
+          {selectedDisease === "피부" && (
+            <>
+              <Image
+                src="/svgs/BigLens.svg"
+                width={115}
+                height={115}
+                alt="BigLens"
+                style={{ position: "absolute", top: "113px", right: "69px" }}
+              />
+              <Image
+                src="/svgs/Skin.svg"
+                width={80}
+                height={80}
+                alt="BigLens"
+                style={{ position: "absolute", top: "124px", right: "93px" }}
+              />
+            </>
           )}
         </CatBox>
 

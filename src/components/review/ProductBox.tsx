@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 import styled from "styled-components";
@@ -14,28 +15,30 @@ const ProductBox = ({ productArr }: Props) => {
         #곰팡이성피부염&nbsp; <div>관련 상품</div>
       </Title>
 
-      <ProducFlextBox>
-        {productArr.map((data: any) => (
-          <ColummBox key={data.id}>
-            <Image
-              src={data.url}
-              width={120}
-              height={120}
-              alt="Product"
-              style={{ borderRadius: "15px", border: "0.5px solid #dedede" }}
-            />
-            <ProductName>{data.name}</ProductName>
-            <Price>
-              {data.price}
-              <div>원</div>
-            </Price>
-            <StarBox>
-              <Image src="/svgs/Star.svg" width={59} height={11} alt="Star" />
-              <ReviewCount>({data.star})</ReviewCount>
-            </StarBox>
-          </ColummBox>
-        ))}
-      </ProducFlextBox>
+      <Link href="/shop">
+        <ProducFlextBox>
+          {productArr.map((data: any) => (
+            <ColummBox key={data.id}>
+              <Image
+                src={data.url}
+                width={120}
+                height={120}
+                alt="Product"
+                style={{ borderRadius: "15px", border: "0.5px solid #dedede" }}
+              />
+              <ProductName>{data.name}</ProductName>
+              <Price>
+                {data.price}
+                <div>원</div>
+              </Price>
+              <StarBox>
+                <Image src="/svgs/Star.svg" width={59} height={11} alt="Star" />
+                <ReviewCount>({data.star})</ReviewCount>
+              </StarBox>
+            </ColummBox>
+          ))}
+        </ProducFlextBox>
+      </Link>
     </ProductBoxWrapper>
   );
 };
