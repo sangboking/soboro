@@ -78,8 +78,8 @@ const CatBoard = () => {
 
           <Image
             src="/svgs/Skin.svg"
-            width={80}
-            height={80}
+            width={77}
+            height={77}
             alt="Skin"
             style={{ position: "absolute", top: "124px", right: "93px" }}
             className={skinControl(selectedDisease)}
@@ -165,7 +165,7 @@ const CatBox = styled.div`
   .skin-toggle {
     position: absolute;
     transition: 0.5s ease-in-out;
-    transform: translate(-58.5px, 103px);
+    transform: translate(-57.5px, 101px);
   }
 
   .default-toggle {
