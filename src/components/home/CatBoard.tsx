@@ -18,6 +18,16 @@ const CatBoard = () => {
     return "default-toggle";
   };
 
+  const eyeControl = (disease: string) => {
+    if (disease === "눈") return "eye-opacity";
+    return "default-opacity";
+  };
+
+  const skinControl = (disease: string) => {
+    if (disease === "피부") return "skin-opacity";
+    return "default-opacity";
+  };
+
   return (
     <CatBoardWrapper>
       <Image
@@ -57,29 +67,23 @@ const CatBoard = () => {
             style={{ position: "absolute", top: "10px", right: "10px" }}
           />
 
-          {selectedDisease === "눈" && (
-            <>
-              <Image
-                src="/svgs/Eye.svg"
-                width={77}
-                height={77}
-                alt="BigLens"
-                style={{ position: "absolute", top: "62.5px", right: "100px" }}
-              />
-            </>
-          )}
+          <Image
+            src="/svgs/Eye.svg"
+            width={77}
+            height={77}
+            alt="Eye"
+            style={{ position: "absolute", top: "62.5px", right: "100px" }}
+            className={eyeControl(selectedDisease)}
+          />
 
-          {selectedDisease === "피부" && (
-            <>
-              <Image
-                src="/svgs/Skin.svg"
-                width={80}
-                height={80}
-                alt="BigLens"
-                style={{ position: "absolute", top: "124px", right: "93px" }}
-              />
-            </>
-          )}
+          <Image
+            src="/svgs/Skin.svg"
+            width={80}
+            height={80}
+            alt="Skin"
+            style={{ position: "absolute", top: "124px", right: "93px" }}
+            className={skinControl(selectedDisease)}
+          />
         </CatBox>
 
         <DiseaseBox>
@@ -161,13 +165,28 @@ const CatBox = styled.div`
   .skin-toggle {
     position: absolute;
     transition: 0.5s ease-in-out;
-    transform: translate(-58.5px, 104px);
+    transform: translate(-58.5px, 103px);
   }
 
   .default-toggle {
     position: absolute;
     transition: 0.5s ease-in-out;
     transform: scale(0.3);
+  }
+
+  .default-opacity {
+    opacity: 0;
+    transition: 0.5s ease-in-out;
+  }
+
+  .eye-opacity {
+    opacity: 1;
+    transition: 0.5s ease-in-out;
+  }
+
+  .skin-opacity {
+    opacity: 1;
+    transition: 0.5s ease-in-out;
   }
 `;
 
